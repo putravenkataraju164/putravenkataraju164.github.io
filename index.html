@@ -190,7 +190,7 @@
   .filters button[aria-pressed="true"] { color: #07040f; background: var(--cyn); border-color: var(--cyn); font-weight: 700; }
 
   ol.tl { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); background: linear-gradient(var(--mag), transparent 280px) left top / 2px 100% no-repeat; }
-  ol.tl li { position: relative; display: grid; grid-template-columns: 10rem 5.2rem 1fr; gap: 4px 16px; padding: 13px 0 13px 28px; }
+  ol.tl li { position: relative; display: grid; grid-template-columns: 10rem 1fr; gap: 4px 16px; padding: 13px 0 13px 28px; }
   ol.tl li[hidden] { display: none; }
   ol.tl li::before { content: ""; position: absolute; left: -7px; top: 22px; width: 12px; height: 12px; background: var(--bg); border: 2px solid var(--dim); transform: rotate(45deg); }
   ol.tl li:hover::before { border-color: var(--cyn); background: var(--cyn); }
@@ -199,14 +199,25 @@
   .cur time { color: var(--mag); }
   .tag { font: 400 .95rem var(--mono); padding-top: 2px; }
   .t-work, .t-paper { color: var(--cyn); } .t-edu { color: var(--dim); } .t-cert { color: var(--yel); } .t-win, .t-ctf { color: var(--mag); }
-  .tl strong { font-weight: 700; font-size: 1.15rem; }
+  .tl strong { display: block; font-weight: 700; font-size: 1.15rem; }
   .tl .sub { display: block; color: var(--dim); font-size: 1rem; }
-  .logo { display: inline-flex; align-items: center; margin-top: 8px; padding: 6px 12px; background: #fff; border: 1px solid var(--line); border-radius: 3px; }
-  .logo img { display: block; height: 22px; width: auto; max-width: 150px; }
-  @media (max-width: 700px) {
-    ol.tl li { grid-template-columns: auto 1fr; }
-    ol.tl li > div { grid-column: 1 / -1; }
-  }
+  .logo { display: flex; width: fit-content; align-items: center; justify-content: center; height: 48px; margin-top: 10px; padding: 0 16px; background: #fff; border: 1px solid var(--line); border-radius: 4px; transition: border-color .15s; }
+  .tl li:hover .logo { border-color: var(--cyn); }
+  .logo img { display: block; height: 30px; width: auto; max-width: 180px; object-fit: contain; }
+  @media (max-width: 700px) { ol.tl li { grid-template-columns: 1fr; } }
+
+  .ach { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .ach .panel.wide { grid-column: 1 / -1; }
+  .ach .in { padding: 22px 24px 26px; }
+  .ach h3 { margin: 0 0 16px; font: 800 1.05rem/1.2 var(--display); color: var(--cyn); }
+  .ach ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+  .ach .wide ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 24px; }
+  .ach li { position: relative; padding-left: 20px; }
+  .ach li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; background: var(--mag); transform: rotate(45deg); }
+  .ach li b { display: block; font-weight: 700; font-size: 1.12rem; line-height: 1.3; }
+  .ach li .sub { display: block; color: var(--dim); font-size: 1rem; }
+  .ach li .when { display: block; color: var(--dim); font: 400 .95rem var(--mono); margin-top: 2px; }
+  @media (max-width: 760px) { .ach { grid-template-columns: 1fr; } .ach .wide ul { grid-template-columns: 1fr; } }
 
   .links { display: grid; }
   .links a {
@@ -237,6 +248,7 @@
     <nav aria-label="Sections">
       <a href="#profile">Profile</a>
       <a href="#timeline">Timeline</a>
+      <a href="#achievements">Achievements</a>
       <a href="#contact">Contact</a>
       <button class="themebtn" id="themebtn" type="button" aria-label="Switch colour theme">theme: dark</button>
     </nav>
@@ -286,7 +298,7 @@
         <dl>
           <dt>name</dt><dd>Venkata Raju Putra</dd>
           <dt>role</dt><dd>DevSecOps Lead, InvoiceCloud<br><span class="d">Since October 2026</span></dd>
-          <dt>education</dt><dd>Master’s in Cyber Security and Digital Forensics<br><span class="d">Koneru Lakshmaiah Education Foundation (K L University), Guntur, Andhra Pradesh, India</span></dd>
+          <dt>education</dt><dd>Master’s in Cyber Security and Digital Forensics<br><span class="d">Koneru Lakshmaiah Education Foundation (K L University), Guntur, Andhra Pradesh, India, 2017 - 2019</span><br><br>B.Tech in Computer Science and Engineering<br><span class="d">Andhra University, Visakhapatnam, Andhra Pradesh, India, 2013 - 2017</span></dd>
           <dt>interests</dt>
           <dd><ul>
             <li>Vulnerability assessment</li>
@@ -299,17 +311,22 @@
 
     <section id="timeline">
       <h2>Timeline</h2>
-      <div class="filters" id="filters" role="group" aria-label="Filter timeline"></div>
       <ol class="tl" id="tl"></ol>
       <noscript><p>This page uses JavaScript for the timeline and terminal.</p></noscript>
+    </section>
+
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <div class="ach" id="ach"></div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <div class="panel"><div class="in links">
+        <a href="mailto:mrpvr@outlook.com"><span>email</span><b>mrpvr@outlook.com</b></a>
         <a href="https://www.linkedin.com/in/mrpvr/" rel="noopener"><span>linkedin</span><b>linkedin.com/in/mrpvr</b></a>
         <a href="https://twitter.com/mr_pvr" rel="noopener"><span>twitter</span><b>twitter.com/mr_pvr</b></a>
-        <a href="https://putravenkataraju164.github.io/assets/Venkata%20Raju%20Putra%20-%20Resume%202023.pdf" rel="noopener"><span>resume</span><b>Venkata Raju Putra - Resume 2023.pdf</b></a>
+        <a href="Venkata%20Raju%20Putra%202026.pdf" rel="noopener"><span>resume</span><b>Venkata Raju Putra 2026.pdf</b></a>
         <a href="http://sp0il3rs.github.io/sp0il3rs" rel="noopener"><span>ctf team</span><b>sp0il3rs.github.io/sp0il3rs</b></a>
       </div></div>
     </section>
@@ -332,28 +349,43 @@
 
   /* ---------- data ---------- */
   var LINKS = {
+    email: ["mrpvr@outlook.com", "mailto:mrpvr@outlook.com"],
     linkedin: ["LinkedIn", "https://www.linkedin.com/in/mrpvr/"],
     twitter: ["Twitter", "https://twitter.com/mr_pvr"],
-    resume: ["Resume (PDF)", "https://putravenkataraju164.github.io/assets/Venkata%20Raju%20Putra%20-%20Resume%202023.pdf"],
+    resume: ["Resume (PDF)", "Venkata%20Raju%20Putra%202026.pdf"],
     spoilers: ["Spoilers CTF team", "http://sp0il3rs.github.io/sp0il3rs"]
   };
   // chronological; displayed newest first
   var TL = [
-    { d: "2013 - 2017", t: "edu", h: "B.Tech, Computer Science & Engineering", s: "Andhra University" },
-    { d: "2017 - 2019", t: "edu", h: "M.Tech, Cyber Security & Digital Forensics", s: "KLEF (K L University)" },
-    { d: "27 Apr 2018", t: "win", h: "CyberThon 2018 winner" },
-    { d: "Apr 2019", t: "paper", h: "Paper published at IJEAT", s: "Securing Android Applications from Known Vulnerabilities through Penetration Testing" },
-    { d: "May 2019", t: "ctf", h: "Founded and captained the CTF team Spoilers", s: "sp0il3rs.github.io/sp0il3rs" },
     { d: "2020 - 2021", t: "work", h: "Information Security Analyst", s: "Paralok Information Security", logo: "paralok-com-logo.png" },
     { d: "2021", t: "work", h: "Associate Consultant", s: "KPMG India", logo: "kpmg-com-brandmark.svg" },
     { d: "2022", t: "work", h: "Consultant", s: "KPMG India", logo: "kpmg-com-brandmark.svg" },
-    { d: "2022", t: "cert", h: "Certified Red Team Professional (CRTP)" },
-    { d: "2023", t: "cert", h: "Offensive Security Certified Professional (OSCP)" },
     { d: "2023 - 2026", t: "work", h: "Senior Security Engineer", s: "Oracle", logo: "oracle-com-brandmark.svg" },
     { d: "Oct 2026 - now", t: "work", h: "DevSecOps Lead", s: "InvoiceCloud", logo: "invoicecloud-com-logo.png", cur: true }
   ];
   var TL_DESC = TL.slice().reverse();
-  var TYPES = [["all", "all"], ["work", "work"], ["edu", "education"], ["cert", "certs"], ["win", "wins"], ["paper", "paper"], ["ctf", "ctf"]];
+  // everything that is not a job lives here (newest first inside each group)
+  var ACH = [
+    { g: "HackerOne", items: [
+      { h: "Multiple rewards on private HackerOne programs" }
+    ] },
+    { g: "Publications", items: [
+      { h: "Securing Android Applications from Known Vulnerabilities through Penetration Testing", s: "Published at IJEAT", d: "April 2019" }
+    ] },
+    { g: "CTF and competitions", items: [
+      { h: "Founded and captained the CTF team Spoilers", url: "http://sp0il3rs.github.io/sp0il3rs", d: "May 2019" },
+      { h: "CyberThon 2018 winner", s: "District-Level Ideate & Innovate Challenge, Visakhapatnam", d: "27 April 2018" }
+    ] },
+    { g: "Conferences and talks", items: [
+      { h: "NullCon 2026", s: "Attended, Goa" },
+      { h: "Microsoft Blue Hat India", s: "Attended, Hyderabad", d: "2024 and 2025" },
+      { h: "Thick Client Security", s: "Speaker, Null Community monthly meet, Hyderabad" }
+    ] },
+    { g: "Certifications", wide: true, items: [
+      { h: "Offensive Security Certified Professional (OSCP)", d: "2023" },
+      { h: "Certified Red Team Professional (CRTP)", d: "2022" }
+    ] }
+  ];
 
   /* ---------- company logos ---------- */
   // Loads the logo file from the same folder as index.html. If the file is missing, shows the plain company name instead.
@@ -376,22 +408,23 @@
     var li = document.createElement("li");
     li.dataset.type = e.t;
     if (e.cur) li.className = "cur";
-    li.innerHTML = "<time>" + esc(e.d) + '</time><span class="tag t-' + e.t + '">' + e.t + "</span><div><strong>" + esc(e.h) + "</strong></div>";
+    li.innerHTML = "<time>" + esc(e.d) + "</time><div><strong>" + esc(e.h) + "</strong></div>";
     var box = li.querySelector("div");
     if (e.logo) { box.appendChild(makeLogo(e.logo, e.s)); }
     else if (e.s) { var sub = document.createElement("span"); sub.className = "sub"; sub.textContent = e.s; box.appendChild(sub); }
     tl.appendChild(li);
   });
-  var filters = $("#filters");
-  TYPES.forEach(function (p, i) {
-    var b = document.createElement("button");
-    b.type = "button"; b.textContent = p[1];
-    b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
-    b.addEventListener("click", function () {
-      filters.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-      tl.querySelectorAll("li").forEach(function (li) { li.hidden = !(p[0] === "all" || li.dataset.type === p[0]); });
-    });
-    filters.appendChild(b);
+  /* ---------- achievements on page ---------- */
+  var achEl = $("#ach");
+  ACH.forEach(function (g) {
+    var p = document.createElement("div");
+    p.className = "panel" + (g.wide ? " wide" : "");
+    var items = g.items.map(function (it) {
+      var title = it.url ? '<a href="' + it.url + '" target="_blank" rel="noopener">' + esc(it.h) + "</a>" : esc(it.h);
+      return "<li><b>" + title + "</b>" + (it.s ? '<span class="sub">' + esc(it.s) + "</span>" : "") + (it.d ? '<span class="when">' + esc(it.d) + "</span>" : "") + "</li>";
+    }).join("");
+    p.innerHTML = '<div class="in"><h3>' + esc(g.g) + "</h3><ul>" + items + "</ul></div>";
+    achEl.appendChild(p);
   });
 
   /* ---------- terminal ---------- */
@@ -413,12 +446,20 @@
       return '<span class="d">' + esc(pad(e.d, 15)) + '</span><span class="t-' + e.t + '">' + esc(pad(e.t, 7)) + "</span>" + esc(e.h) + (e.s ? ' <span class="d">(' + esc(e.s) + ")</span>" : "");
     }).join("\n");
   }
-  function byType(types) { return TL_DESC.filter(function (e) { return types.indexOf(e.t) > -1; }); }
+  function achGroup(name) { return ACH.filter(function (g) { return g.g === name; }); }
+  function achLines(groups) {
+    return groups.map(function (g) {
+      return '<span class="b">' + esc(g.g) + "</span>\n" + g.items.map(function (it) {
+        return "  " + esc(it.h) + (it.s ? ' <span class="d">(' + esc(it.s) + ")</span>" : "") + (it.d ? ' <span class="d">' + esc(it.d) + "</span>" : "");
+      }).join("\n");
+    }).join("\n\n");
+  }
 
   var FILES = {
     "profile.txt": function () { return CMD.about(); },
     "interests.txt": function () { return CMD.interests(); },
     "timeline.log": function () { return CMD.timeline(); },
+    "achievements.txt": function () { return CMD.achievements(); },
     "contact.txt": function () { return CMD.contact(); },
     "quote.txt": function () { return '<span class="a">Security is an attitude.</span>\nIf fear exists, your freedom vanishes.'; }
   };
@@ -427,8 +468,8 @@
     help: function () {
       var rows = [
         ["whoami", "who is this"], ["now", "current role"], ["about", "profile and education"], ["interests", "areas of focus"],
-        ["timeline", "career, newest first"], ["education", "degrees"], ["certs", "certifications"],
-        ["achievements", "wins, paper, CTF team"], ["contact", "links"], ["resume", "open the CV (PDF)"],
+        ["timeline", "work history, newest first"], ["education", "degrees"], ["certs", "certifications"],
+        ["achievements", "HackerOne, papers, CTF, talks"], ["contact", "email and links"], ["resume", "open the CV (PDF)"],
         ["ls / cat <file>", "browse files"], ["theme [dark|light]", "switch colours"], ["clear", "clear the screen"]
       ];
       return '<span class="d">Available commands</span>\n' + rows.map(function (r) { return '<span class="a">' + esc(pad(r[0], 20)) + "</span>" + esc(r[1]); }).join("\n") + '\n<span class="d">Tab completes. Arrow up repeats.</span>';
@@ -446,11 +487,11 @@
       return '<span class="b">+</span> Vulnerability assessment\n<span class="b">+</span> Penetration testing and ethical hacking\n<span class="b">+</span> Malware analysis and reverse engineering';
     },
     timeline: function () { return tlLines(TL_DESC); },
-    education: function () { return tlLines(byType(["edu"])); },
-    certs: function () { return tlLines(byType(["cert"])); },
-    achievements: function () { return tlLines(byType(["win", "paper", "ctf"])); },
+    education: function () { return 'Master’s in Cyber Security and Digital Forensics <span class="d">2017 - 2019</span>\n  K L University, Guntur, Andhra Pradesh\nB.Tech in Computer Science and Engineering <span class="d">2013 - 2017</span>\n  Andhra University, Visakhapatnam'; },
+    certs: function () { return achLines(achGroup("Certifications")); },
+    achievements: function () { return achLines(ACH); },
     contact: function () {
-      return ["linkedin", "twitter", "resume", "spoilers"].map(function (k) { return '<span class="d">' + esc(pad(k, 10)) + "</span>" + link(k); }).join("\n");
+      return ["email", "linkedin", "twitter", "resume", "spoilers"].map(function (k) { return '<span class="d">' + esc(pad(k, 10)) + "</span>" + link(k); }).join("\n");
     },
     resume: function () { window.open(LINKS.resume[1], "_blank", "noopener"); return "Opening " + link("resume") + " in a new tab."; },
     ls: function () { return Object.keys(FILES).map(function (f) { return '<span class="a">' + f + "</span>"; }).join("  "); },
@@ -493,7 +534,7 @@
     if (!String(window.getSelection())) input.focus();
   });
   var chips = $("#chips");
-  ["help", "whoami", "now", "timeline", "certs", "contact", "resume"].forEach(function (c) {
+  ["help", "whoami", "now", "timeline", "achievements", "contact", "resume"].forEach(function (c) {
     var b = document.createElement("button");
     b.type = "button"; b.className = "chip"; b.textContent = c;
     b.addEventListener("click", function () { run(c); });
