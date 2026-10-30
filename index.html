@@ -201,6 +201,8 @@
   .t-work, .t-paper { color: var(--cyn); } .t-edu { color: var(--dim); } .t-cert { color: var(--yel); } .t-win, .t-ctf { color: var(--mag); }
   .tl strong { font-weight: 700; font-size: 1.15rem; }
   .tl .sub { display: block; color: var(--dim); font-size: 1rem; }
+  .logo { display: inline-flex; align-items: center; margin-top: 8px; padding: 6px 12px; background: #fff; border: 1px solid var(--line); border-radius: 3px; }
+  .logo img { display: block; height: 22px; width: auto; max-width: 150px; }
   @media (max-width: 700px) {
     ol.tl li { grid-template-columns: auto 1fr; }
     ol.tl li > div { grid-column: 1 / -1; }
@@ -342,16 +344,31 @@
     { d: "27 Apr 2018", t: "win", h: "CyberThon 2018 winner" },
     { d: "Apr 2019", t: "paper", h: "Paper published at IJEAT", s: "Securing Android Applications from Known Vulnerabilities through Penetration Testing" },
     { d: "May 2019", t: "ctf", h: "Founded and captained the CTF team Spoilers", s: "sp0il3rs.github.io/sp0il3rs" },
-    { d: "2020 - 2021", t: "work", h: "Information Security Analyst", s: "Paralok Information Security" },
-    { d: "2021", t: "work", h: "Associate Consultant", s: "KPMG India" },
-    { d: "2022", t: "work", h: "Consultant", s: "KPMG India" },
+    { d: "2020 - 2021", t: "work", h: "Information Security Analyst", s: "Paralok Information Security", logo: "paralok-com-logo.png" },
+    { d: "2021", t: "work", h: "Associate Consultant", s: "KPMG India", logo: "kpmg-com-brandmark.svg" },
+    { d: "2022", t: "work", h: "Consultant", s: "KPMG India", logo: "kpmg-com-brandmark.svg" },
     { d: "2022", t: "cert", h: "Certified Red Team Professional (CRTP)" },
     { d: "2023", t: "cert", h: "Offensive Security Certified Professional (OSCP)" },
-    { d: "2023 - 2026", t: "work", h: "Senior Security Engineer", s: "IC3, Oracle" },
-    { d: "Oct 2026 - now", t: "work", h: "DevSecOps Lead", s: "InvoiceCloud", cur: true }
+    { d: "2023 - 2026", t: "work", h: "Senior Security Engineer", s: "Oracle", logo: "oracle-com-brandmark.svg" },
+    { d: "Oct 2026 - now", t: "work", h: "DevSecOps Lead", s: "InvoiceCloud", logo: "invoicecloud-com-logo.png", cur: true }
   ];
   var TL_DESC = TL.slice().reverse();
   var TYPES = [["all", "all"], ["work", "work"], ["edu", "education"], ["cert", "certs"], ["win", "wins"], ["paper", "paper"], ["ctf", "ctf"]];
+
+  /* ---------- company logos ---------- */
+  // Loads the logo file from the same folder as index.html. If the file is missing, shows the plain company name instead.
+  function makeLogo(file, name) {
+    var wrap = document.createElement("span");
+    wrap.className = "logo";
+    var img = document.createElement("img");
+    img.alt = name;
+    img.addEventListener("error", function () {
+      var t = document.createElement("span"); t.className = "sub"; t.textContent = name; wrap.replaceWith(t);
+    });
+    img.src = file;
+    wrap.appendChild(img);
+    return wrap;
+  }
 
   /* ---------- timeline on page ---------- */
   var tl = $("#tl");
@@ -359,7 +376,10 @@
     var li = document.createElement("li");
     li.dataset.type = e.t;
     if (e.cur) li.className = "cur";
-    li.innerHTML = "<time>" + esc(e.d) + '</time><span class="tag t-' + e.t + '">' + e.t + "</span><div><strong>" + esc(e.h) + "</strong>" + (e.s ? '<span class="sub">' + esc(e.s) + "</span>" : "") + "</div>";
+    li.innerHTML = "<time>" + esc(e.d) + '</time><span class="tag t-' + e.t + '">' + e.t + "</span><div><strong>" + esc(e.h) + "</strong></div>";
+    var box = li.querySelector("div");
+    if (e.logo) { box.appendChild(makeLogo(e.logo, e.s)); }
+    else if (e.s) { var sub = document.createElement("span"); sub.className = "sub"; sub.textContent = e.s; box.appendChild(sub); }
     tl.appendChild(li);
   });
   var filters = $("#filters");
