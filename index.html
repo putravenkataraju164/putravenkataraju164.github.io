@@ -1,454 +1,511 @@
-<!DOCTYPE html>
-<html >
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v4.9.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/enlarged-122x120.png" type="image/x-icon">
-  <meta name="description" content="">
-  <title>MR. P V R</title>
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
-  <link rel="stylesheet" href="assets/tether/tether.min.css">
-  <link rel="stylesheet" href="assets/soundcloud-plugin/style.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/as-pie-progress/css/progress.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="description" content="Venkata Raju Putra (mrpvr): DevSecOps Lead at InvoiceCloud. Penetration testing, malware analysis, OSCP, CRTP.">
+<title>MR. P V R | Venkata Raju Putra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap">
+<style>
+  :root {
+    --bg: #0a0614;
+    --panel: #120b25;
+    --ink: #ece8ff;
+    --dim: #9a92c4;
+    --line: #2d2058;
+    --mag: #ff2e88;
+    --cyn: #19e3ff;
+    --yel: #ffd23f;
+    --glow1: 255, 46, 136;
+    --glow2: 25, 227, 255;
+    --gridc: rgba(25, 227, 255, .30);
+    --display: "Orbitron", "Rajdhani", system-ui, sans-serif;
+    --body: "Rajdhani", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "Share Tech Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    color-scheme: dark;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f6f3ff; --panel: #ffffff; --ink: #1b1340; --dim: #5d5688; --line: #cfc6f0;
+      --mag: #d3126a; --cyn: #007a92; --yel: #8a6200;
+      --glow1: 214, 18, 107; --glow2: 0, 122, 146; --gridc: rgba(0, 122, 146, .22);
+      color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f6f3ff; --panel: #ffffff; --ink: #1b1340; --dim: #5d5688; --line: #cfc6f0;
+    --mag: #d3126a; --cyn: #007a92; --yel: #8a6200;
+    --glow1: 214, 18, 107; --glow2: 0, 122, 146; --gridc: rgba(0, 122, 146, .22);
+    color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --bg: #0a0614; --panel: #120b25; --ink: #ece8ff; --dim: #9a92c4; --line: #2d2058;
+    --mag: #ff2e88; --cyn: #19e3ff; --yel: #ffd23f;
+    --glow1: 255, 46, 136; --glow2: 25, 227, 255; --gridc: rgba(25, 227, 255, .30);
+    color-scheme: dark;
+  }
+
+  *, *::before, *::after { box-sizing: inherit; }
+  html { height: 100%; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 68px); scroll-behavior: smooth; }
+  body {
+    margin: 0; min-height: 100%;
+    background: var(--bg); color: var(--ink);
+    font: 500 18px/1.55 var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+    background: var(--bg); z-index: 30;
+  }
+  .bg {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(52rem 30rem at 88% -6%, rgba(var(--glow1), .22), transparent 62%),
+      radial-gradient(46rem 28rem at -4% 22%, rgba(var(--glow2), .14), transparent 62%);
+  }
+  .floor {
+    position: fixed; left: -25%; right: -25%; bottom: 0; height: 48vh; z-index: 0; pointer-events: none;
+    background-image: linear-gradient(var(--gridc) 1px, transparent 1px), linear-gradient(90deg, var(--gridc) 1px, transparent 1px);
+    background-size: 56px 56px;
+    transform-origin: 50% 100%; transform: perspective(420px) rotateX(62deg);
+    -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 88%);
+    mask-image: linear-gradient(to top, #000 0%, transparent 88%);
+    opacity: .55;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .floor { animation: drift 5s linear infinite; }
+    @keyframes drift { to { background-position: 0 56px, 0 0; } }
+  }
+
+  a { color: var(--cyn); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { color: var(--mag); }
+  :focus-visible { outline: 2px solid var(--yel); outline-offset: 2px; }
+  ::selection { background: var(--mag); color: #fff; }
+
+  .wrap { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); }
+
+  /* chamfered panel: outer = border colour, inner = fill */
+  .panel {
+    --c: 16px; background: var(--line); padding: 1px;
+    clip-path: polygon(var(--c) 0, 100% 0, 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, 0 100%, 0 var(--c));
+    transition: background .15s;
+  }
+  .panel > .in {
+    background: var(--panel); height: 100%;
+    clip-path: polygon(var(--c) 0, 100% 0, 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, 0 100%, 0 var(--c));
+  }
+
+  /* header */
+  .site {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 54px; flex-wrap: wrap; padding-top: 6px; padding-bottom: 6px; }
+  .brand { font: 800 1.05rem/1 var(--display); color: var(--ink); text-decoration: none; letter-spacing: .04em; }
+  .brand i { color: var(--mag); font-style: normal; }
+  nav { display: flex; gap: clamp(12px, 2.6vw, 26px); align-items: center; flex-wrap: wrap; font-size: 1rem; }
+  nav a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  nav a:hover { color: var(--cyn); }
+  .themebtn { font: 500 .9rem var(--mono); color: var(--dim); background: transparent; border: 1px solid var(--line); border-radius: 2px; padding: 3px 10px; cursor: pointer; }
+  .themebtn:hover { color: var(--cyn); border-color: var(--cyn); }
+
+  /* hero */
+  .hero { padding: clamp(36px, 8vw, 84px) 0 24px; }
+  .hero-grid { display: grid; gap: 36px; grid-template-columns: minmax(0, 1fr); align-items: end; }
+  @media (min-width: 920px) { .hero-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, .8fr); gap: 56px; } }
+  h1 {
+    margin: 0; font: 800 clamp(2.3rem, 7.2vw, 4.7rem)/1.04 var(--display); letter-spacing: .01em;
+    color: var(--ink);
+    text-shadow: 3px 0 rgba(var(--glow1), .85), -3px 0 rgba(var(--glow2), .85);
+    max-width: 9ch;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    h1 { animation: glitch .9s steps(1, end) 1; }
+    @keyframes glitch {
+      0%   { transform: translate(0); text-shadow: 3px 0 rgba(var(--glow1), .85), -3px 0 rgba(var(--glow2), .85); }
+      12%  { transform: translate(-6px, 1px); text-shadow: 10px 0 rgba(var(--glow1), .9), -10px 0 rgba(var(--glow2), .9); }
+      24%  { transform: translate(5px, -1px); text-shadow: -8px 0 rgba(var(--glow1), .9), 8px 0 rgba(var(--glow2), .9); }
+      36%  { transform: translate(0); text-shadow: 3px 0 rgba(var(--glow1), .85), -3px 0 rgba(var(--glow2), .85); }
+      52%  { transform: translate(3px, 0); text-shadow: 7px 0 rgba(var(--glow1), .9), -7px 0 rgba(var(--glow2), .9); }
+      64%  { transform: translate(0); text-shadow: 3px 0 rgba(var(--glow1), .85), -3px 0 rgba(var(--glow2), .85); }
+    }
+  }
+  .role { margin: 26px 0 0; font-size: clamp(1.15rem, 2.4vw, 1.45rem); line-height: 1.4; max-width: 34ch; }
+  .role b { color: var(--cyn); font-weight: 700; }
+  .motto { margin: 10px 0 0; color: var(--dim); font-size: 1.1rem; }
+
+  .now .in { padding: 22px 24px 24px; }
+  .live { margin: 0; display: flex; align-items: center; gap: 10px; color: var(--dim); font: 400 .95rem var(--mono); }
+  .dot { width: 9px; height: 9px; background: var(--mag); transform: rotate(45deg); box-shadow: 0 0 10px var(--mag); }
+  @media (prefers-reduced-motion: no-preference) { .dot { animation: pulse 1.8s ease-in-out infinite; } @keyframes pulse { 50% { opacity: .25; } } }
+  .now-role { margin: 14px 0 0; font: 800 clamp(1.35rem, 3vw, 1.8rem)/1.15 var(--display); }
+  .now-org { margin: 6px 0 0; color: var(--cyn); font-size: 1.35rem; font-weight: 700; }
+  .now-since { margin: 2px 0 0; color: var(--dim); }
+  .creds { margin: 18px 0 0; padding: 14px 0 0; list-style: none; border-top: 1px solid var(--line); display: grid; gap: 4px; }
+  .creds li::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 10px; background: var(--yel); transform: rotate(45deg); }
+
+  /* terminal */
+  .term { margin-top: 44px; }
+  .term:focus-within { background: var(--cyn); }
+  .term-bar { display: flex; justify-content: space-between; gap: 12px; padding: 9px 18px; border-bottom: 1px solid var(--line); color: var(--dim); font: 400 .9rem var(--mono); }
+  .term-bar .live-s { color: var(--cyn); }
+  .term-body { padding: 14px 18px 8px; height: min(52vh, 420px); overflow: auto; cursor: text; overscroll-behavior: contain; font: 400 .98rem/1.6 var(--mono); }
+  .line { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .inrow { display: flex; gap: 1ch; align-items: center; font: 400 .98rem var(--mono); padding: 0 18px 12px; }
+  .ps { color: var(--mag); white-space: nowrap; }
+  .ps i { color: var(--dim); font-style: normal; }
+  .inrow input {
+    flex: 1; min-width: 0; background: transparent; border: 0; outline: none;
+    color: var(--ink); font: inherit; font-size: 16px; caret-color: var(--cyn); padding: 2px 0;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 18px 18px; border-top: 1px solid var(--line); }
+  .chip { font: 400 .9rem var(--mono); color: var(--cyn); background: transparent; border: 1px solid var(--line); border-radius: 2px; padding: 3px 11px; cursor: pointer; }
+  .chip:hover { border-color: var(--cyn); background: rgba(var(--glow2), .12); }
+  .a { color: var(--cyn); } .b { color: var(--mag); } .w { color: var(--yel); } .d { color: var(--dim); }
+
+  /* sections */
+  section { padding: clamp(52px, 8vw, 88px) 0 0; }
+  h2 { margin: 0 0 28px; font: 800 clamp(1.3rem, 3vw, 1.75rem)/1.2 var(--display); display: flex; align-items: center; gap: 14px; }
+  h2::before { content: ""; width: 14px; height: 26px; background: var(--mag); transform: skewX(-18deg); flex: none; }
+
+  dl { margin: 0; display: grid; grid-template-columns: 9rem 1fr; gap: 14px 24px; padding: clamp(20px, 3vw, 32px); }
+  dt { color: var(--dim); font: 400 1rem var(--mono); padding-top: 3px; }
+  dd { margin: 0; font-size: 1.15rem; }
+  dd .d { font-size: 1rem; }
+  dd ul { margin: 0; padding: 0; list-style: none; }
+  dd li::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 12px; background: var(--mag); transform: rotate(45deg) translateY(-2px); }
+  @media (max-width: 600px) { dl { grid-template-columns: 1fr; gap: 0; } dd { margin-bottom: 18px; } }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; }
+  .filters button { font: 400 .92rem var(--mono); color: var(--dim); background: transparent; border: 1px solid var(--line); border-radius: 2px; padding: 4px 12px; cursor: pointer; }
+  .filters button:hover { color: var(--ink); border-color: var(--dim); }
+  .filters button[aria-pressed="true"] { color: #07040f; background: var(--cyn); border-color: var(--cyn); font-weight: 700; }
+
+  ol.tl { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--line); background: linear-gradient(var(--mag), transparent 280px) left top / 2px 100% no-repeat; }
+  ol.tl li { position: relative; display: grid; grid-template-columns: 10rem 5.2rem 1fr; gap: 4px 16px; padding: 13px 0 13px 28px; }
+  ol.tl li[hidden] { display: none; }
+  ol.tl li::before { content: ""; position: absolute; left: -7px; top: 22px; width: 12px; height: 12px; background: var(--bg); border: 2px solid var(--dim); transform: rotate(45deg); }
+  ol.tl li:hover::before { border-color: var(--cyn); background: var(--cyn); }
+  ol.tl li.cur::before { border-color: var(--mag); background: var(--mag); box-shadow: 0 0 14px var(--mag); }
+  .tl time { color: var(--dim); font: 400 1rem var(--mono); padding-top: 2px; }
+  .cur time { color: var(--mag); }
+  .tag { font: 400 .95rem var(--mono); padding-top: 2px; }
+  .t-work, .t-paper { color: var(--cyn); } .t-edu { color: var(--dim); } .t-cert { color: var(--yel); } .t-win, .t-ctf { color: var(--mag); }
+  .tl strong { font-weight: 700; font-size: 1.15rem; }
+  .tl .sub { display: block; color: var(--dim); font-size: 1rem; }
+  @media (max-width: 700px) {
+    ol.tl li { grid-template-columns: auto 1fr; }
+    ol.tl li > div { grid-column: 1 / -1; }
+  }
+
+  .links { display: grid; }
+  .links a {
+    display: grid; grid-template-columns: 9rem 1fr; gap: 20px; padding: 16px clamp(18px, 3vw, 30px);
+    text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line);
+  }
+  .links a:last-child { border-bottom: 0; }
+  .links a span { color: var(--dim); font: 400 1rem var(--mono); }
+  .links a b { font-weight: 600; font-size: 1.15rem; overflow-wrap: anywhere; }
+  .links a:hover { background: rgba(var(--glow2), .1); }
+  .links a:hover b { color: var(--cyn); }
+  @media (max-width: 600px) { .links a { grid-template-columns: 1fr; gap: 0; } }
+
+  footer { position: relative; z-index: 1; margin-top: clamp(56px, 9vw, 96px); border-top: 1px solid var(--line); padding: 28px 0 44px; color: var(--dim); }
+  footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  footer q { color: var(--ink); quotes: none; }
+
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
 </head>
 <body>
-  <section class="menu cid-qRmaWLkFl1" once="menu" id="menu2-l">
+<div class="bg" aria-hidden="true"></div>
+<div class="floor" aria-hidden="true"></div>
 
-    
-
-    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
-        <div class="menu-logo">
-            <div class="navbar-brand">
-                <a href="index.html">
-                        Home
-                    </a>
-                
-                
-            </div>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
-				<ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
-				<li class="nav-item">
-                    		<a class="nav-link link text-black display-4" href="#about">About</a>
-                </li>
-				<li class="nav-item">
-                    					<a class="nav-link link text-black display-4" href="edu.html">Education</a>
-                </li>
-                <!--<li class="nav-item dropdown"><a class="nav-link link text-black dropdown-toggle display-4" href="page3.html" data-toggle="dropdown-submenu" aria-expanded="false">
-                        Research</a><div class="dropdown-menu">
-						<a class="text-black dropdown-item display-4" href="page3.html#header7-1t" target="_blank" aria-expanded="false">AAPT</a></div></li>-->
-				<li class="nav-item">
-						<a class="nav-link link text-black display-4" href="achievements.html">Achievements</a></li>
-						 
-				<li class="nav-item">
-						<a class="nav-link link text-black display-4" href="assets/Venkata Raju Putra - Resume 2023.pdf" target="_blank">Download CV</a>
-				</li>
-				</ul>
-            
-        </div>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">PVR<i>//</i></a>
+    <nav aria-label="Sections">
+      <a href="#profile">Profile</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#contact">Contact</a>
+      <button class="themebtn" id="themebtn" type="button" aria-label="Switch colour theme">theme: dark</button>
     </nav>
-</section>
-<section class="header1 cid-qRmt3HhGny" id="header1-n">
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1"><span style="font-weight: normal;">Hello I'm</span> Venkata Raju</h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-2">How are you doing?</h3>
-                <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">Let's catch up!</p>
-                <div class="mbr-section-btn align-center"><a class="btn btn-md btn-black-outline display-4" href="mailto:mrpvr@outlook.com"><span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn" style="color: rgb(228, 46, 15);"></span>Mail</a>  <a class="btn btn-md btn-black-outline display-4" href="https://www.linkedin.com/in/mrpvr/" target="_blank"><span class="socicon socicon-linkedin mbr-iconfont mbr-iconfont-btn" style="color: rgb(15, 118, 153);"></span>LinkedIn</a> 
-				<a class="btn btn-md btn-black-outline display-4" href="https://twitter.com/mr_pvr" target="_blank"><span class="socicon socicon-twitter mbr-iconfont mbr-iconfont-btn" style="color: rgb(10, 97, 164);"></span>Twitter</a> 
-				</div>
-            </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div>
+        <h1 aria-label="Venkata Raju Putra">Venkata Raju Putra</h1>
+        <p class="role">DevSecOps Lead at <b>InvoiceCloud</b>. Offensive security background: <b>OSCP</b>, <b>CRTP</b>.</p>
+        <p class="motto">Security is an attitude.</p>
+      </div>
+      <aside class="panel now" aria-label="Current role">
+        <div class="in">
+          <p class="live"><span class="dot"></span>currently</p>
+          <p class="now-role">DevSecOps Lead</p>
+          <p class="now-org">InvoiceCloud</p>
+          <p class="now-since">Since October 2026</p>
+          <ul class="creds">
+            <li>Offensive Security Certified Professional</li>
+            <li>Certified Red Team Professional</li>
+            <li>M.Tech, Cyber Security &amp; Digital Forensics</li>
+          </ul>
         </div>
+      </aside>
     </div>
 
-</section>
-
-<section class="testimonials2 cid-qRsidkj8vU" id="testimonials2-1l">
-
-    
-
-    
-
-    <div id="about" class="container">
-        <div class="media-container-row">
-            <div class="mbr-figure pr-lg-5" style="width: 70%;">
-              <img src="assets/images/1680057663615.jpeg" alt="" title="">
-            </div>
-            <div class="media-content px-3 align-self-center mbr-white py-2"><p class="mbr-author-name pt-4 mb-2 mbr-fonts-style display-7">Venkata Raju Putra</p>
-                    <!--<p class="mbr-author-desc mbr-fonts-style display-7">
-                       
-                    </p>-->
-                    <p class="mbr-text testimonial-text mbr-fonts-style display-7">Master's in Cyber Security and Digital Forensics
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Koneru Lakshmiah Education Foundation (K L University)
-<br>&nbsp;&nbsp;&nbsp;&nbsp;Guntur, Andhra Pradesh
-<br>&nbsp;&nbsp;&nbsp;&nbsp;India 
-<br>
-<br>Interest Areas 
-<br>&nbsp;&nbsp;	Vulnerability Assessment 
-<br>&nbsp;&nbsp;	Penetration Testing & Ethical Hacking
-<br>&nbsp;&nbsp;	Malware Analysis & Reverse Engineering
-<br>
-
-                    
-            </div>
-        </div>
+    <div class="panel term" id="term">
+      <div class="in">
+        <div class="term-bar"><span>visitor@pvr-deck: ~</span><span class="live-s">session open</span></div>
+        <div class="term-body" id="out" role="log" aria-live="polite" aria-label="Terminal output"></div>
+        <label class="inrow">
+          <span class="ps">visitor@pvr-deck<i>:~$</i></span>
+          <input id="cmd" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="Type a command, for example help">
+        </label>
+        <div class="chips" id="chips" aria-label="Quick commands"></div>
+      </div>
     </div>
-</section>
+  </div>
 
-<section class="mbr-section article content10 cid-qRmygxBajd" id="content10-p">
-    
-     
+  <div class="wrap">
+    <section id="profile">
+      <h2>Profile</h2>
+      <div class="panel"><div class="in">
+        <dl>
+          <dt>name</dt><dd>Venkata Raju Putra</dd>
+          <dt>role</dt><dd>DevSecOps Lead, InvoiceCloud<br><span class="d">Since October 2026</span></dd>
+          <dt>education</dt><dd>Master’s in Cyber Security and Digital Forensics<br><span class="d">Koneru Lakshmaiah Education Foundation (K L University), Guntur, Andhra Pradesh, India</span></dd>
+          <dt>interests</dt>
+          <dd><ul>
+            <li>Vulnerability assessment</li>
+            <li>Penetration testing and ethical hacking</li>
+            <li>Malware analysis and reverse engineering</li>
+          </ul></dd>
+        </dl>
+      </div></div>
+    </section>
 
-    <div class="container">
-        <div class="inner-container" style="width: 66%;">
-            <hr class="line" style="width: 25%;">
-            <div class="section-text align-center mbr-white mbr-fonts-style display-5">
-                    Security is an Attitude
-                </div>
-            <hr class="line" style="width: 25%;">
-        </div>
-    </div>
-</section>
+    <section id="timeline">
+      <h2>Timeline</h2>
+      <div class="filters" id="filters" role="group" aria-label="Filter timeline"></div>
+      <ol class="tl" id="tl"></ol>
+      <noscript><p>This page uses JavaScript for the timeline and terminal.</p></noscript>
+    </section>
 
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="panel"><div class="in links">
+        <a href="https://www.linkedin.com/in/mrpvr/" rel="noopener"><span>linkedin</span><b>linkedin.com/in/mrpvr</b></a>
+        <a href="https://twitter.com/mr_pvr" rel="noopener"><span>twitter</span><b>twitter.com/mr_pvr</b></a>
+        <a href="https://putravenkataraju164.github.io/assets/Venkata%20Raju%20Putra%20-%20Resume%202023.pdf" rel="noopener"><span>resume</span><b>Venkata Raju Putra - Resume 2023.pdf</b></a>
+        <a href="http://sp0il3rs.github.io/sp0il3rs" rel="noopener"><span>ctf team</span><b>sp0il3rs.github.io/sp0il3rs</b></a>
+      </div></div>
+    </section>
+  </div>
+</main>
 
+<footer>
+  <div class="wrap">
+    <span>© mrpvr 2026</span>
+    <q>If fear exists, your freedom vanishes.</q>
+  </div>
+</footer>
 
-<!--<section class="header3 cid-r7u7bZsBeH" id="header3-3b">
-<div class="container">
-        <div class="media-container-row">
-		      <div class="mbr-figure" style="width: 100%;">
-                <img src="assets/images/" alt="Mobirise" title="">
-            </div>
+<script>
+(function () {
+  var root = document.documentElement;
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function (s) { return document.querySelector(s); };
+  var esc = function (s) { return String(s).replace(/[&<>"']/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]; }); };
 
-            <div class="media-content">
-                <h1 class="mbr-section-title mbr-white pb-3 mbr-fonts-style display-1">
-               </h1>
-                
-                <div class="mbr-section-text mbr-white pb-3 ">
-                    <p class="mbr-text mbr-fonts-style display-5">
-                       
-                    </p>
-                </div>
-                <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="" target="_blank"></a></div>
-            </div>
-        </div>
-    </div>
+  /* ---------- data ---------- */
+  var LINKS = {
+    linkedin: ["LinkedIn", "https://www.linkedin.com/in/mrpvr/"],
+    twitter: ["Twitter", "https://twitter.com/mr_pvr"],
+    resume: ["Resume (PDF)", "https://putravenkataraju164.github.io/assets/Venkata%20Raju%20Putra%20-%20Resume%202023.pdf"],
+    spoilers: ["Spoilers CTF team", "http://sp0il3rs.github.io/sp0il3rs"]
+  };
+  // chronological; displayed newest first
+  var TL = [
+    { d: "2013 - 2017", t: "edu", h: "B.Tech, Computer Science & Engineering", s: "Andhra University" },
+    { d: "2017 - 2019", t: "edu", h: "M.Tech, Cyber Security & Digital Forensics", s: "KLEF (K L University)" },
+    { d: "27 Apr 2018", t: "win", h: "CyberThon 2018 winner" },
+    { d: "Apr 2019", t: "paper", h: "Paper published at IJEAT", s: "Securing Android Applications from Known Vulnerabilities through Penetration Testing" },
+    { d: "May 2019", t: "ctf", h: "Founded and captained the CTF team Spoilers", s: "sp0il3rs.github.io/sp0il3rs" },
+    { d: "2020 - 2021", t: "work", h: "Information Security Analyst", s: "Paralok Information Security" },
+    { d: "2021", t: "work", h: "Associate Consultant", s: "KPMG India" },
+    { d: "2022", t: "work", h: "Consultant", s: "KPMG India" },
+    { d: "2022", t: "cert", h: "Certified Red Team Professional (CRTP)" },
+    { d: "2023", t: "cert", h: "Offensive Security Certified Professional (OSCP)" },
+    { d: "2023 - 2026", t: "work", h: "Senior Security Engineer", s: "IC3, Oracle" },
+    { d: "Oct 2026 - now", t: "work", h: "DevSecOps Lead", s: "InvoiceCloud", cur: true }
+  ];
+  var TL_DESC = TL.slice().reverse();
+  var TYPES = [["all", "all"], ["work", "work"], ["edu", "education"], ["cert", "certs"], ["win", "wins"], ["paper", "paper"], ["ctf", "ctf"]];
 
-</section>-->
+  /* ---------- timeline on page ---------- */
+  var tl = $("#tl");
+  TL_DESC.forEach(function (e) {
+    var li = document.createElement("li");
+    li.dataset.type = e.t;
+    if (e.cur) li.className = "cur";
+    li.innerHTML = "<time>" + esc(e.d) + '</time><span class="tag t-' + e.t + '">' + e.t + "</span><div><strong>" + esc(e.h) + "</strong>" + (e.s ? '<span class="sub">' + esc(e.s) + "</span>" : "") + "</div>";
+    tl.appendChild(li);
+  });
+  var filters = $("#filters");
+  TYPES.forEach(function (p, i) {
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = p[1];
+    b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+    b.addEventListener("click", function () {
+      filters.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      tl.querySelectorAll("li").forEach(function (li) { li.hidden = !(p[0] === "all" || li.dataset.type === p[0]); });
+    });
+    filters.appendChild(b);
+  });
 
+  /* ---------- terminal ---------- */
+  var out = $("#out"), input = $("#cmd");
+  var hist = [], hi = 0;
+  var PS = '<span class="ps">visitor@pvr-deck<i>:~$</i></span> ';
 
+  function print(html) {
+    var d = document.createElement("div");
+    d.className = "line";
+    d.innerHTML = html;
+    out.appendChild(d);
+    out.scrollTop = out.scrollHeight;
+  }
+  function pad(s, n) { s = String(s); while (s.length < n) s += " "; return s; }
+  function link(k) { return '<a href="' + LINKS[k][1] + '" target="_blank" rel="noopener">' + esc(LINKS[k][0]) + "</a>"; }
+  function tlLines(list) {
+    return list.map(function (e) {
+      return '<span class="d">' + esc(pad(e.d, 15)) + '</span><span class="t-' + e.t + '">' + esc(pad(e.t, 7)) + "</span>" + esc(e.h) + (e.s ? ' <span class="d">(' + esc(e.s) + ")</span>" : "");
+    }).join("\n");
+  }
+  function byType(types) { return TL_DESC.filter(function (e) { return types.indexOf(e.t) > -1; }); }
 
+  var FILES = {
+    "profile.txt": function () { return CMD.about(); },
+    "interests.txt": function () { return CMD.interests(); },
+    "timeline.log": function () { return CMD.timeline(); },
+    "contact.txt": function () { return CMD.contact(); },
+    "quote.txt": function () { return '<span class="a">Security is an attitude.</span>\nIf fear exists, your freedom vanishes.'; }
+  };
 
-<section class="timeline1 cid-qRmyrfg6gp" id="timeline1-v">
+  var CMD = {
+    help: function () {
+      var rows = [
+        ["whoami", "who is this"], ["now", "current role"], ["about", "profile and education"], ["interests", "areas of focus"],
+        ["timeline", "career, newest first"], ["education", "degrees"], ["certs", "certifications"],
+        ["achievements", "wins, paper, CTF team"], ["contact", "links"], ["resume", "open the CV (PDF)"],
+        ["ls / cat <file>", "browse files"], ["theme [dark|light]", "switch colours"], ["clear", "clear the screen"]
+      ];
+      return '<span class="d">Available commands</span>\n' + rows.map(function (r) { return '<span class="a">' + esc(pad(r[0], 20)) + "</span>" + esc(r[1]); }).join("\n") + '\n<span class="d">Tab completes. Arrow up repeats.</span>';
+    },
+    whoami: function () {
+      return '<span class="a">Venkata Raju Putra</span> (mrpvr)\nDevSecOps Lead, InvoiceCloud\nOSCP, CRTP. Master’s in Cyber Security and Digital Forensics.';
+    },
+    now: function () {
+      return '<span class="a">DevSecOps Lead</span> at InvoiceCloud\n<span class="d">Since October 2026</span>';
+    },
+    about: function () {
+      return '<span class="d">name</span>       Venkata Raju Putra\n<span class="d">role</span>       DevSecOps Lead, InvoiceCloud (since October 2026)\n<span class="d">education</span>  Master’s in Cyber Security and Digital Forensics\n           Koneru Lakshmaiah Education Foundation (K L University)\n           Guntur, Andhra Pradesh, India';
+    },
+    interests: function () {
+      return '<span class="b">+</span> Vulnerability assessment\n<span class="b">+</span> Penetration testing and ethical hacking\n<span class="b">+</span> Malware analysis and reverse engineering';
+    },
+    timeline: function () { return tlLines(TL_DESC); },
+    education: function () { return tlLines(byType(["edu"])); },
+    certs: function () { return tlLines(byType(["cert"])); },
+    achievements: function () { return tlLines(byType(["win", "paper", "ctf"])); },
+    contact: function () {
+      return ["linkedin", "twitter", "resume", "spoilers"].map(function (k) { return '<span class="d">' + esc(pad(k, 10)) + "</span>" + link(k); }).join("\n");
+    },
+    resume: function () { window.open(LINKS.resume[1], "_blank", "noopener"); return "Opening " + link("resume") + " in a new tab."; },
+    ls: function () { return Object.keys(FILES).map(function (f) { return '<span class="a">' + f + "</span>"; }).join("  "); },
+    date: function () { return esc(new Date().toString()); },
+    sudo: function () { return '<span class="w">visitor is not in the sudoers file. This incident will be reported.</span>'; }
+  };
 
-    
+  function run(raw) {
+    var line = raw.trim();
+    print(PS + esc(line));
+    if (!line) return;
+    hist.push(line); hi = hist.length;
+    var parts = line.split(/\s+/), c = parts[0].toLowerCase(), arg = parts.slice(1).join(" ");
+    if (c === "clear") { out.innerHTML = ""; return; }
+    if (c === "theme") { setTheme(arg === "dark" || arg === "light" ? arg : (currentTheme() === "dark" ? "light" : "dark")); print("Theme set to " + currentTheme() + "."); return; }
+    if (c === "echo") { print(esc(arg)); return; }
+    if (c === "cat") {
+      if (!arg) { print('<span class="w">cat: give a file name. Try ls.</span>'); return; }
+      if (FILES[arg]) { print(FILES[arg]()); } else { print('<span class="w">cat: ' + esc(arg) + ": no such file. Try ls.</span>"); }
+      return;
+    }
+    if (CMD[c]) { print(CMD[c]()); return; }
+    print('<span class="w">command not found: ' + esc(c) + '.</span> Type <span class="a">help</span> to list commands.');
+  }
 
-    
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { run(input.value); input.value = ""; }
+    else if (e.key === "ArrowUp") { if (hi > 0) { hi--; input.value = hist[hi]; } e.preventDefault(); }
+    else if (e.key === "ArrowDown") { if (hi < hist.length - 1) { hi++; input.value = hist[hi]; } else { hi = hist.length; input.value = ""; } e.preventDefault(); }
+    else if (e.key === "Tab") {
+      e.preventDefault();
+      var v = input.value.toLowerCase(); if (!v) return;
+      var names = Object.keys(CMD).concat(["clear", "theme", "cat", "echo"]);
+      var m = names.filter(function (n) { return n.indexOf(v) === 0; });
+      if (m.length === 1) input.value = m[0];
+    }
+  });
+  out.addEventListener("click", function (e) {
+    if (e.target.closest("a")) return;
+    if (!String(window.getSelection())) input.focus();
+  });
+  var chips = $("#chips");
+  ["help", "whoami", "now", "timeline", "certs", "contact", "resume"].forEach(function (c) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = c;
+    b.addEventListener("click", function () { run(c); });
+    chips.appendChild(b);
+  });
 
-    <div class="container align-center">
-        <h2 class="mbr-section-title pb-3 mbr-fonts-style display-2"><strong>
-            TIMELINE</strong></h2>
-        <h3 class="mbr-section-subtitle pb-5 mbr-fonts-style display-5">
-            Connecting the dots</h3>
+  /* boot sequence */
+  var boot = [
+    '<span class="a">[ ok ]</span> opening session as visitor',
+    '<span class="a">[ ok ]</span> loading profile: mrpvr',
+    '<span class="a">[ ok ]</span> mounting timeline.log (' + TL.length + " entries)",
+    '<span class="a">[ ok ]</span> security is an attitude',
+    'Type <span class="b">help</span> to list commands.'
+  ];
+  boot.forEach(function (l, i) {
+    if (reduced) { print(l); } else { setTimeout(function () { print(l); }, 160 * (i + 1)); }
+  });
 
-        <div class="container timelines-container" mbri-timelines="">
-             <div class="row timeline-element  separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">2013 - 2017</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-left ">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">B.Tech<br>Computer Science & Engineering<br><div>Andhra University</div></h4>
-                        <p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row timeline-element reverse separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">2017 - 2019</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-right">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">M.Tech<br>Cyber Security & Digital Forensics<br>KLEF (K L University)</h4>
-                        <p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row timeline-element separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-                    <div class="time-line-date-content">
-                       <p class="mbr-timeline-date mbr-fonts-style display-5">27 April 2018</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-left ">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">CyberThon 2018 WINNER
-                        </h4>
-                        <p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>
-
-            <!--<div class="row timeline-element reverse separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">2018 - 2019</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-right">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-                           Internship at eSF Labs</h4>
-                        <p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>-->
-
-            <div class="row timeline-element separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">April 2019</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-left ">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-4.5">
-                            Academic Paper Publication at<br>IJEAT<br>on<br>Securing Android Applications from Known Vulnerabilities through Penetration Testing</h4>
-                        <p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row timeline-element reverse separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">May 2019</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-right">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-                           Founder and Captain <br> 
-						   Capture The Flag team <a href="http://sp0il3rs.github.io/sp0il3rs" target="blank">Spoilers</a></h4>
-
-                        <p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>
-			 
-			 
-            <div class="row timeline-element separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">2020 - 2021</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-left ">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-4.5">
-                            Information Security Analyst | Paralok Information Security</h4>
-                        <p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>
-			 
-			 <div class="row timeline-element reverse separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">2021</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-right">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-                           Associate Consultant | KPMG India</h4>
-							<p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>     
-<div class="row timeline-element separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">2022</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-left ">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-4.5">
-                            Consultant | KPMG India</h4>
-                        <p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>
-			 <div class="row timeline-element reverse separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">2022</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-right">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-                          Certified Red Team Professional - CRTP</h4>
-							<p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div> 
-			<div class="row timeline-element separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">2023</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-left ">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-4.5">
-                            Offensive Security Certified Professional - OSCP</h4>
-                        <p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>
- <div class="row timeline-element reverse separline">
-                <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-                    <div class="time-line-date-content">
-                        <p class="mbr-timeline-date mbr-fonts-style display-5">2023</p>
-                    </div>
-                </div>
-                <span class="iconBackground"></span>
-                <div class="col-xs-12 col-md-6 align-right">
-                    <div class="timeline-text-content">
-                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-                           Senior Security Engineer | IC3 | Oracle </h4>
-							<p class="mbr-timeline-text mbr-fonts-style display-7"></p>
-                    </div>
-                </div>
-            </div>     
-        </div>
-    </div>
-</section>
-
-
-<section class="mbr-section article content10 cid-qRnW1i6upl" id="content10-18">
-    
-     
-
-    <div class="container">
-        <div class="inner-container" style="width: 66%;">
-            <hr class="line" style="width: 25%;">
-            <div class="section-text align-center mbr-white mbr-fonts-style display-5">
-                    If fear exists, your freedom varnishes.&nbsp;</div>
-            <hr class="line" style="width: 25%;">
-        </div>
-    </div>
-</section>
-
-<section class="cid-qRnXonUysz" id="footer5-19">
-
-    
-
-    
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="col-md-3">
-                <div class="media-wrap">
-                    <!--<a href="index.html">
-                       <img src="assets/images/" alt="Mobirise" title="">
-                    </a>-->
-                </div>
-            </div>
-            <div class="col-md-9">
-                <p class="mbr-text align-right links mbr-fonts-style display-7"><strong></strong>&nbsp; &nbsp; &nbsp; <strong>&nbsp;</strong>&nbsp; &nbsp;</p>
-            </div>
-        </div>
-        <div class="footer-lower">
-            <div class="media-container-row">
-                <div class="col-md-12">
-                    <hr>
-                </div>
-            </div>
-            <div class="media-container-row mbr-white">
-                <div class="col-md-6 copyright">
-                    <p class="mbr-text mbr-fonts-style display-7">
-                        ©mrpvr 2023</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="social-list align-right">
-                        <div class="soc-item">
-                            <a href="https://twitter.com/mr_pvr" target="_blank">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
-                            </a>
-                        </div>
-                        
-                        <div class="soc-item">
-                            <a href="https://www.linkedin.com/in/mrpvr/" target="_blank">
-                                <span class="mbr-iconfont mbr-iconfont-social socicon-linkedin socicon"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/popper/popper.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
-  <script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
-  <script src="assets/smoothscroll/smooth-scroll.js"></script>
-  <script src="assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
-  <script src="assets/as-pie-progress/jquery-as-pie-progress.min.js"></script>
-  <script src="assets/dropdown/js/script.min.js"></script>
-  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
-  <script src="assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
-  <script src="assets/theme/js/script.js"></script>
-  <script src="assets/slidervideo/script.js"></script>
-  
-  
+  /* ---------- theme ---------- */
+  var btn = $("#themebtn");
+  function currentTheme() {
+    return root.getAttribute("data-theme") || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  }
+  function setTheme(t) {
+    root.setAttribute("data-theme", t);
+    btn.textContent = "theme: " + t;
+    try { localStorage.setItem("pvr-theme-v2", t); } catch (e) {}
+  }
+  try { var saved = localStorage.getItem("pvr-theme-v2"); if (saved === "dark" || saved === "light") root.setAttribute("data-theme", saved); } catch (e) {}
+  btn.textContent = "theme: " + currentTheme();
+  btn.addEventListener("click", function () { setTheme(currentTheme() === "dark" ? "light" : "dark"); });
+})();
+</script>
 </body>
 </html>
