@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>CT mismatch test</title></head>
+<body>
+<h1>Content-Type mismatch test</h1>
+<script>
+  // Shows where this page runs. In a sandbox (no allow-same-origin) document.domain is "null".
+  // If it shows the portal host, the response was served as unsandboxed same-origin HTML (vulnerable).
+  alert("document.domain = " + document.domain);
+</script>
+</body>
+</html>
